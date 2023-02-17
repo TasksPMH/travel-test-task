@@ -1,0 +1,39 @@
+.section{
+  max-width: 1144px;
+  padding: 0 20px;
+  margin: 0 auto 64px auto;
+}
+.section--desc{
+  max-width: 586px;
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(35, 35, 35, 0.7);
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.section--header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 73px;
+  .section--title{
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 46px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .section--desc {
+    margin: 0 auto;
+    p {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}

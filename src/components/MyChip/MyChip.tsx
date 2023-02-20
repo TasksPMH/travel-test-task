@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
-import './MyChip.css';
+import React from 'react';
+import './MyChip.scss';
 interface ChipProps {
-  label: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+  selected?: boolean;
 }
 
-const MyChip: React.FC<ChipProps> = ({ label }) => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleClick = () => {
-    setIsActive(!isActive);
-  };
-
+const MyChip: React.FC<ChipProps> = ({ onClick, children,selected }) => {
   return (
-    <div
-      className={`chip${isActive ? ' chip--active' : ''}`}
-      onClick={handleClick}
-    >
-      {label}
-    </div>
+    <button className={`chip ${selected? "chip__selected" :""}`} onClick={onClick}>
+      {children}
+    </button>
   );
 };
 

@@ -1,0 +1,23 @@
+.chip {
+  
+  border: 1px solid #EAEAEA;
+  background-color: #FFFFFF;
+  color: #232323B2;
+  padding: 21px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 174px;
+  flex-basis: calc(25% - 10px);
+  &:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #659DBD;
+    color: #232323;
+  }
+}
+
+.chip__selected{
+  background-color: #659DBD;
+color: white;
+border:none;
+}

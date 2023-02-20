@@ -1,30 +1,44 @@
 import React, { useState } from 'react';
-import {AiFillCheckCircle, AiFillCloseCircle} from 'react-icons/ai';
-import './Input.css'
-const MyInput = ({success=false, error=false}:{success?:boolean; error?: boolean}) => {
-  
-  const [value, setValue] = useState('');
+import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
+import iconError from '../../libs/icons/icon_error.svg';
+import iconSuccess from '../../libs/icons/icon_success.svg';
+import './Input.scss';
+interface MyInputProps {
+  success?: boolean;
+  error?: boolean;
+  name: string;
+  type: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
+const MyInput: React.FC<MyInputProps> = ({
+  success = false,
+  error = false,
+  name,
+  type,
+  value,
+  onChange,
+}) => {
+  if (value) success = true;
   let classInput = 'input__field';
-  if (success) classInput += "input__field--valid";
-  if(error) classInput += "input__field--invalid";
+  if (success) classInput += ' input__field--valid';
+  if (error) classInput += ' input__field--invalid';
   return (
     <div className="input">
       <input
-        type="text"
+        type={type}
         className={classInput}
+        name={name}
         value={value}
-        onChange={handleChange}
+        onChange={(e) => onChange(e)}
+        placeholder='Placeholder'
       />
       {success && (
-        <AiFillCheckCircle className="input__icon input__icon--success" />
+        <img src={iconSuccess} className='input__icon'/>
       )}
-      {(error &&
-        <AiFillCloseCircle className="input__icon input__icon--error" />
+      {error && (
+        <img src={iconError} className='input__icon'/>
       )}
     </div>
   );

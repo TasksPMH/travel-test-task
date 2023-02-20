@@ -1,0 +1,85 @@
+.select {
+  position: relative;
+  display: inline-block;
+  &__field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 17px 21px;
+    padding-right: 0;
+    border: 1px solid #EAEAEA;
+    font-family: sans-serif;
+    cursor: pointer;
+    &:hover,&:focus {
+    border-color: #659DBD;
+    &-open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  }
+  
+  
+  &__input {
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    &__icon {
+      width: 32px;
+      height: 32px;
+      padding-right: 16px;
+      cursor: pointer;
+    }
+  }
+  
+  
+  
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+  }
+  
+  &__option {
+    padding: 10px;
+    cursor: pointer;
+    &:hover{
+      background-color: #EAEAEA;
+    }
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .select {
+    &__field {
+      padding: 16px 16px;
+      padding-right: 0;
+      &-open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    &__input {
+      font-size: 14px;
+      &__icon {
+        width: 24px;
+        height: 24px;
+        padding-right: 8px;
+      }
+    }
+    &__options {
+      border: 1px solid #EAEAEA;
+    }
+    &__option {
+      padding: 8px;
+    }
+  }
+}

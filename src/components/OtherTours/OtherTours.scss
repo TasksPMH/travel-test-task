@@ -1,0 +1,11 @@
+.other-tours{
+  &__title{
+    margin-bottom: 64px;
+  }
+}
+  .other-tours__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+  }

@@ -1,0 +1,48 @@
+.carousel {
+  width: 100%;
+  overflow:hidden;
+  position: relative;
+  padding-left: 128px;
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  &__slides {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    padding-right: 32px;
+
+    img {
+      max-width: 313px;
+      max-height: 336px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 40px;
+    transition: color 0.3s ease-in-out;
+    color: #E7717D;
+    &:disabled{
+      color: #EAEAEA !important;
+    }
+  }
+}

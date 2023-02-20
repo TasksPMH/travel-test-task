@@ -1,0 +1,48 @@
+.card-container{
+  max-width: 566px;
+}
+.tour-card {
+  position: relative;
+  cursor: pointer;
+  padding: 30px;
+  max-width: 373px;
+  img {
+    width: 100%;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .like-icon {
+    position: absolute;
+    top: 46px;
+    right: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  &__description {
+    
+    color: #232323b2;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &:hover {
+    img{
+      transform: scale(1.15);
+      transform-origin: bottom;
+    }
+    .like-icon{
+      top:0px;
+      right: 30px;
+    }
+  }
+}

@@ -1,12 +1,17 @@
 import React from 'react';
 import './MySection.scss';
 import MyButton from '../MyButton/MyButton';
+import MyFeedback from '../MyFeedback/MyFeedback';
 function MySection() {
+  
+  const [feedbackOpen, setfeedbackOpen] = React.useState(false);
+  console.log("🚀 ~ file: MySection.tsx:8 ~ MySection ~ feedbackOpen", feedbackOpen)
   return (
     <div className="section">
+      <MyFeedback show={feedbackOpen} onClose={()=>setfeedbackOpen(false)}/>
       <div className="section--header">
         <h1 className="section--title">Walking in Old Tallinn</h1>
-        <MyButton>Feedback</MyButton>
+        <MyButton onClick={() => setfeedbackOpen(true)}>Feedback</MyButton>
       </div>
 
       <div className="section--desc">

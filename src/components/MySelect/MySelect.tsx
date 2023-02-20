@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
-import { TfiArrowCircleDown, TfiArrowCircleUp } from 'react-icons/tfi';
-import './MySelect.css';
+import arrowDown from '../../libs/icons/arrow_down.svg';
+import arrowUp from '../../libs/icons/arrow_up.svg';
+
+import './MySelect.scss';
 
 interface SelectProps {
   options?: string[];
   onSelect?: (value: string) => void;
 }
-const initOption:string[]=["Walking in Old Tallinn","St. Isaac's Cathedral","The Bridge of Peace","El Caminito del Rey"]
-const MySelect: React.FC<SelectProps> = ({ options=initOption, onSelect }) => {
+const initOption: string[] = [
+  'Walking in Old Tallinn',
+  "St. Isaac's Cathedral",
+  'The Bridge of Peace',
+  'El Caminito del Rey',
+];
+const MySelect: React.FC<SelectProps> = ({
+  options = initOption,
+  onSelect,
+}) => {
   const [value, setValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
@@ -26,13 +36,9 @@ const MySelect: React.FC<SelectProps> = ({ options=initOption, onSelect }) => {
     }
   };
 
-  const handleOpen = () => {
-    setIsOpen(true);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
+  const handleClick = () => {
+    setIsOpen(prev=>!prev);
+  }
 
   const handleSelect = (value: string) => {
     setValue(value);
@@ -44,7 +50,7 @@ const MySelect: React.FC<SelectProps> = ({ options=initOption, onSelect }) => {
     <div className="select">
       <div
         className={`select__field${isOpen ? ' select__field--open' : ''}`}
-        onClick={handleOpen}
+        onClick={handleClick}
         ref={ref}
       >
         <input
@@ -55,16 +61,20 @@ const MySelect: React.FC<SelectProps> = ({ options=initOption, onSelect }) => {
           readOnly
         />
         {!isOpen ? (
-          <TfiArrowCircleDown color="#EAEAEA" />
+          <img src={arrowDown} className="select__input__icon" />
         ) : (
-          <TfiArrowCircleUp color="#659DBD" />
+          <img
+            src={arrowUp}
+            className="select__input__icon"
+          />
         )}
       </div>
+
       {isOpen && (
         <div className="select__options">
-          {options.map((option:string,index) => (
+          {options.map((option: string, index) => (
             <div
-            key={index}
+              key={index}
               className="select__option"
               onClick={() => handleSelect(option)}
             >

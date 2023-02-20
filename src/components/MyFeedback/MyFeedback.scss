@@ -82,7 +82,9 @@
     &-form {
       &__row {
         flex-direction: column;
+        
         &__col {
+          margin-bottom: 8px;
           width: 100%;
           &:not(:last-child) {
             margin-right: 0;
@@ -101,6 +103,7 @@
     }
     &__footer{
       flex-direction: column;
+      gap: 8px;
       &__btn{
         margin-bottom: 16px;
       }

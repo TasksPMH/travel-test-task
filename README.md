@@ -51,7 +51,11 @@ index.tsx: The file that renders the application to the DOM
 ### To get started with this project, you will need to have Node.js and npm installed on your machine. Once you have those installed, you can follow these steps:
 
 Clone the repository to your local machine
-Navigate to the project directory
-Run npm install to install the project dependencies
-Run npm start to start the development server
+
+Navigate to the project directory then run:
+
+### `npm install` to install the project dependencies
+
+### `npm start` to start the development server
+
 Open your web browser and navigate to http://localhost:3000
